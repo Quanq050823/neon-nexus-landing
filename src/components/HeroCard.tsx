@@ -137,7 +137,7 @@ const HeroCard = () => {
           transformStyle: 'preserve-3d',
         }}
       >
-        <Card className="relative w-[400px] bg-card/80 backdrop-blur-xl border-2 border-primary/30 overflow-hidden">
+        <Card className="relative w-[400px] bg-gradient-to-br from-red-950/80 via-card/90 to-blue-950/80 backdrop-blur-xl border-2 border-primary/50 overflow-hidden shadow-[0_0_50px_rgba(220,38,38,0.3)]">
           {/* Hover glow effect */}
           <div
             ref={glowRef}
@@ -145,7 +145,7 @@ const HeroCard = () => {
               isHovered ? 'opacity-50' : 'opacity-0'
             }`}
             style={{
-              background: 'radial-gradient(circle, hsl(var(--primary)) 0%, transparent 70%)',
+              background: 'radial-gradient(circle at center, hsl(var(--primary) / 0.5), rgba(220,38,38,0.2) 50%, transparent 70%)',
               top: '50%',
               left: '50%',
               transform: 'translate(-50%, -50%)',
@@ -193,8 +193,8 @@ const HeroCard = () => {
 
               {/* Status badge */}
               <div className="absolute top-4 right-4">
-                <Badge className="bg-primary/90 text-primary-foreground font-bold shadow-[0_0_20px_hsl(var(--primary))] animate-glow-pulse">
-                  ACTIVE
+                <Badge className="bg-gradient-to-r from-red-600 to-blue-600 text-white font-bold shadow-[0_0_20px_rgba(220,38,38,0.5)] border-0">
+                  LEGEND
                 </Badge>
               </div>
 

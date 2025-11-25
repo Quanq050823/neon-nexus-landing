@@ -183,7 +183,7 @@ const MysticCard = () => {
   return (
     <div className="flex justify-center items-center py-20">
       <div ref={cardRef} className="relative">
-        <Card className="relative w-[400px] bg-card/80 backdrop-blur-xl border-2 border-accent/30 overflow-hidden">
+        <Card className="relative w-[400px] bg-gradient-to-br from-indigo-950/70 via-card/90 to-violet-950/70 backdrop-blur-xl border-2 border-violet-500/50 overflow-hidden shadow-[0_0_60px_rgba(139,92,246,0.4)]">
           {/* Magic orbs */}
           <div ref={orbsRef} className="absolute inset-0 pointer-events-none overflow-hidden">
             {[...Array(8)].map((_, i) => (
@@ -243,7 +243,7 @@ const MysticCard = () => {
               />
 
               <div className="absolute top-4 right-4">
-                <Badge className="bg-accent/90 text-accent-foreground font-bold shadow-[0_0_20px_hsl(var(--accent))] animate-glow-pulse">
+                <Badge className="bg-gradient-to-r from-indigo-500 via-violet-500 to-purple-500 text-white font-bold shadow-[0_0_30px_rgba(139,92,246,0.7)] border-0 animate-pulse">
                   CHANNELING
                 </Badge>
               </div>
