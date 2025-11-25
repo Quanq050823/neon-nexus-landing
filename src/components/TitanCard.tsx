@@ -162,7 +162,7 @@ const TitanCard = () => {
   return (
     <div className="flex justify-center items-center py-20">
       <div ref={cardRef} className="relative">
-        <Card className="relative w-[400px] bg-card/80 backdrop-blur-xl border-2 border-destructive/30 overflow-hidden">
+        <Card className="relative w-[400px] bg-gradient-to-br from-orange-950/70 via-card/90 to-red-950/70 backdrop-blur-xl border-2 border-orange-600/50 overflow-hidden shadow-[0_0_55px_rgba(234,88,12,0.4)]">
           {/* Shockwave rings */}
           <div ref={shockwavesRef} className="absolute inset-0 pointer-events-none overflow-hidden">
             {[...Array(3)].map((_, i) => (
@@ -216,7 +216,7 @@ const TitanCard = () => {
               />
 
               <div className="absolute top-4 right-4">
-                <Badge className="bg-destructive/90 text-destructive-foreground font-bold shadow-[0_0_20px_hsl(var(--destructive))] animate-glow-pulse">
+                <Badge className="bg-gradient-to-r from-orange-600 to-red-600 text-white font-bold shadow-[0_0_30px_rgba(234,88,12,0.7)] border-0">
                   UNSTOPPABLE
                 </Badge>
               </div>

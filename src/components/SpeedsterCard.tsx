@@ -127,7 +127,7 @@ const SpeedsterCard = () => {
   return (
     <div className="flex justify-center items-center py-20">
       <div ref={cardRef} className="relative">
-        <Card className="relative w-[400px] bg-card/80 backdrop-blur-xl border-2 border-cyber/30 overflow-hidden">
+        <Card className="relative w-[400px] bg-gradient-to-br from-yellow-950/60 via-card/90 to-cyan-950/60 backdrop-blur-xl border-2 border-cyber/50 overflow-hidden shadow-[0_0_60px_rgba(0,255,255,0.3)]">
           {/* Speed trails */}
           <div ref={trailsRef} className="absolute inset-0 pointer-events-none overflow-hidden">
             {[...Array(15)].map((_, i) => (
@@ -169,7 +169,7 @@ const SpeedsterCard = () => {
               />
 
               <div className="absolute top-4 right-4">
-                <Badge className="bg-cyber/90 text-background font-bold shadow-[0_0_20px_hsl(var(--cyber))] animate-glow-pulse">
+                <Badge className="bg-gradient-to-r from-yellow-400 to-cyan-400 text-black font-bold shadow-[0_0_30px_rgba(0,255,255,0.6)] animate-glow-pulse border-0">
                   VELOCITY MAX
                 </Badge>
               </div>

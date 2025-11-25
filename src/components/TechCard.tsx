@@ -137,7 +137,7 @@ const TechCard = () => {
   return (
     <div className="flex justify-center items-center py-20">
       <div ref={cardRef} className="relative">
-        <Card className="relative w-[400px] bg-card/80 backdrop-blur-xl border-2 border-primary/30 overflow-hidden">
+        <Card className="relative w-[400px] bg-gradient-to-br from-purple-950/70 via-card/90 to-pink-950/70 backdrop-blur-xl border-2 border-purple-500/50 overflow-hidden shadow-[0_0_50px_rgba(168,85,247,0.4)]">
           {/* Scanline effect */}
           <div
             ref={scanlineRef}
@@ -185,7 +185,7 @@ const TechCard = () => {
               </div>
 
               <div className="absolute top-4 right-4">
-                <Badge className="bg-primary/90 text-primary-foreground font-bold shadow-[0_0_20px_hsl(var(--primary))] animate-glow-pulse">
+                <Badge className="bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold shadow-[0_0_25px_rgba(168,85,247,0.6)] animate-pulse border-0">
                   ONLINE
                 </Badge>
               </div>
