@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Skeleton } from '@/components/ui/skeleton';
 import { Zap, Gauge, Star } from 'lucide-react';
 import speedsterAvatar from '@/assets/speedster-avatar.jpg';
 
@@ -10,6 +11,7 @@ const SpeedsterCard = () => {
   const imageRef = useRef<HTMLDivElement>(null);
   const trailsRef = useRef<HTMLDivElement>(null);
   const [isHovered, setIsHovered] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   useEffect(() => {
     const card = cardRef.current;
@@ -146,15 +148,24 @@ const SpeedsterCard = () => {
 
           <CardContent className="p-0 relative z-10">
             <div className="relative h-[500px] overflow-hidden">
+              {!imageLoaded && (
+                <Skeleton className="absolute inset-0" />
+              )}
               <div
                 ref={imageRef}
-                className="absolute inset-0 bg-cover bg-center"
+                className={`absolute inset-0 bg-cover bg-center transition-opacity duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
                 style={{
                   backgroundImage: `url(${speedsterAvatar})`,
                 }}
               >
                 <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent" />
               </div>
+              <img 
+                src={speedsterAvatar} 
+                alt="" 
+                className="hidden" 
+                onLoad={() => setImageLoaded(true)}
+              />
 
               {/* Lightning effect */}
               <div
