@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Hero from '@/components/Hero';
 import HeroCard from '@/components/HeroCard';
 import SpeedsterCard from '@/components/SpeedsterCard';
@@ -7,8 +8,18 @@ import TitanCard from '@/components/TitanCard';
 import Powers from '@/components/Powers';
 import Origin from '@/components/Origin';
 import CallToAction from '@/components/CallToAction';
+import GlobalLoader from '@/components/GlobalLoader';
+import { useImagePreloader } from '@/hooks/useImagePreloader';
+import heroImage from '@/assets/hero-bg.jpg';
 
 const Index = () => {
+  const isHeroImageLoaded = useImagePreloader(heroImage);
+  const [showContent, setShowContent] = useState(false);
+
+  if (!isHeroImageLoaded || !showContent) {
+    return <GlobalLoader onComplete={() => setShowContent(true)} />;
+  }
+
   return (
     <main className="relative">
       <Hero />
